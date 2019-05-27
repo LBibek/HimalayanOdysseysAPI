@@ -1,0 +1,19 @@
+{
+  "name": "android-api",
+  "version": "1.0.0",
+  "description": "4th Assignment Android Applications Development",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.5.11"
+  }
+}

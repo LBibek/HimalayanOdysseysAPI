@@ -1,0 +1,51 @@
+<div class="col-md-12 user-wrapper" style="padding: 0px;" ng-controller="ctr">
+    <div class="col-md-12 user-header">
+         <div class="col-md-9 content-title">
+             <h2>Add, Edit And Delete Users <strong>{{users.length}}</strong></h2>
+         </div>
+         <div class="col-md-3 content-btn">
+             <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal1"><span class="fa fa-plus"></span> Add User</button>
+         </div>
+    </div>
+    <div class="col-md-12 user-body" style="height:466px;
+    overflow: auto;"> <br><br>
+            <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>User-id</th>
+                        <th>Full Name</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="data in users | orderBy : '-created_date'" ng-class="$index == 0 ? 'actives' : ''">
+                        <td>{{data._id}}</td>
+                        <td>{{data.f_name}} {{data.l_name}}</td>
+                        <td>{{data.u_name}}</td>
+                        <td>{{data.password}}</td>
+                        <td>{{data.created_date | date}}</td>
+                        <td><button ng-click="editUser(data._id)" class="btn btn-primary btn-sm fa fa-pencil" data-toggle="modal" data-target="#myModal2"></button>
+                            <button class="btn btn-danger btn-sm fa fa-trash"></button></td>
+                      </tr>
+                    </tbody>
+                    <style>
+                      .actives{
+                        background: #cce8ff;
+                      }
+                    </style>
+                  </table>
+    </div>
+    <div>
+        <% include addForm.html%>
+        <div ng-if="message" class="message-alert">
+             {{message}}
+          </div>
+        <% include editForm.html%>
+    </div>
+   
+</div>
+
+
