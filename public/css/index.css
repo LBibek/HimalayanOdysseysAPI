@@ -2,12 +2,14 @@
 header{
     background: #0c0c0c;
     color: white;
-    font-weight: bold
+    font-weight: bold;
+    border-bottom: 1px solid #eaeaea;
 
 }
 aside{
     background: #0c0c0c;
     height: 539px;
+    border-right: 1px solid #eaeaea;
 }
 main{
     background: #f3f3f3;
@@ -15,20 +17,31 @@ main{
     border: 1px solid #eaeaea;
     border-radius: 4px;
 }
+.set-left li{
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 9px;
+    list-style: none;
+    margin-top: 4px;
+}
 footer{
     background: green;
 }
 .sidebar ul li a{
     color: #dedede;
     font-size: 16px;
-    padding: 5px 180px 5px 5px;
+    padding: 5px 135px 5px 5px;
     text-decoration: none;
 }
 .sidebar ul li{
     list-style: none;
-    background: #8a8a8a;
+    background: #696969;
     margin-top: 28px;
     padding: 12px;
+    border-radius: 5px;
+}
+.sidebar ul li:hover{
+    background: #484747;
+
 }
 .sidebar h5{
     color: gray;
@@ -81,10 +94,11 @@ modal-body{
 }
 .settings{
     background: snow;
-    margin-right: 11px;
-    border-radius: 29px;
-    padding: 6px;
+    margin-right: 16px;
+    border-radius: 50%;
+    padding: 6px 8px;
     color: #212121;
+    border: 1px solid #545151;
 }
 .settings:hover{
     background: gray;
