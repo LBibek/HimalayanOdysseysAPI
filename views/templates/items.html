@@ -1,0 +1,53 @@
+<div class="col-md-12 user-wrapper" style="padding: 0px;" ng-controller="ctr">
+    <div class="col-md-12 user-header">
+         <div class="col-md-9 content-title">
+             <h2>Add, Edit And Delete Items <strong>{{items.length}}</strong></h2>
+         </div>
+         <div class="col-md-3 content-btn" ng-if="set.dataAuth == true">
+             <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#myModal3"><span class="fa fa-plus"></span> Add Item</button>
+         </div>
+    </div>
+    <div class="col-md-12 user-body" style="height:466px;
+    overflow: auto;"> <br><br>
+            <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Item-id</th>
+                        <th>Item Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Description</th>
+                        <th>Created Date</th>
+                        <th ng-if="set.dataAuth == true">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="data in items | orderBy : '-created_date'" ng-class="$index == 0 ? 'actives' : ''">
+                        <td>{{data._id}}</td>
+                        <td>{{data.itemName}}</td>
+                        <td>{{data.itemPrice}}</td>
+                        <td>{{data.itemImageName}}</td>
+                        <td>{{data.itemDescription}}</td>
+                        <td>{{data.created_date | date}}</td>
+                        <td ng-if="set.dataAuth == true"><button ng-click="editItem(data._id)" class="btn btn-primary btn-sm fa fa-pencil" data-toggle="modal" data-target="#myModal4"></button>
+                            <button class="btn btn-danger btn-sm fa fa-trash"></button></td>
+                      </tr>
+                    </tbody>
+                    <style>
+                      .actives{
+                        background: #cce8ff;
+                      }
+                    </style>
+                  </table>
+    </div>
+    <div>
+        <% include additem.html%>
+        <div ng-if="message" class="message-alert">
+             {{message}}
+          </div>
+        <% include edititem.html%>
+    </div>
+   
+</div>
+
+

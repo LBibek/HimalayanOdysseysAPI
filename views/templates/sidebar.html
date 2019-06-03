@@ -1,0 +1,62 @@
+<div class="col-md-12 sidebar">
+                <h5><span class="fa fa-wrench settings" data-toggle="modal" data-target="#setting"></span> Add Item</h5>
+            <ul>
+                <li id="tab1"><a href="/users"> <span class="fa fa-user" style="  background: #383737;
+                  padding: 10px 13px;
+                  border-radius: 25px;"></span> Users</a></li>
+                <li id="tab2"><a href="/items"><span class="fa fa-list" style="  background: #383737;
+                  padding: 12px 13px;
+                  border-radius: 25px;"></span> Items</a></li>
+            </ul>
+</div>
+
+
+<!-- Trigger the modal with a button -->
+
+<!-- Modal -->
+<div id="setting" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"> My Settings</h4>
+      </div>
+      <div class="modal-body col-md-12">
+        <div class="col-md-12">
+            <div class="col-md-10 set-left">
+                <li><span class="fa fa-sun-o"></span> Light Mode</li>
+                <li><span class="fa fa-edit"></span> Data Entry authurity</li>
+            </div>
+            <div class="col-md-2 set-right">
+                        <input type="checkbox" ng-model="set.lightMode" ng-cheked="set.lightMode"> <span class="fa fa-check" style="    float: right;
+                        position: absolute;
+                        color: #797979;
+                        top: -1px;
+                        font-size: 15px;
+                        box-shadow: 0px 0px 4px #888585;
+                        border-radius: 90px;
+                        padding: 3px;" ng-if="set.lightMode == true"></span> <br> <br>
+                        <input type="checkbox" ng-model="set.dataAuth" ng-cheked="set.dataAuth">   <span class="fa fa-check" style="    float: right;
+                          float: right;
+    position: absolute;
+    color: #797979;
+    top: 42px;
+    font-size: 15px;
+    box-shadow: 0px 0px 4px #888585;
+    border-radius: 90px;
+    padding: 3px;
+    right: -3px;
+                        padding: 3px;" ng-if="set.dataAuth == true"></span>
+                      
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" ng-click="saveSetting(set._id)" data-dismiss="modal">Save Settings</button>
+      </div>
+    </div>
+
+  </div>
+</div>
